@@ -23,7 +23,7 @@ English | [简体中文](./README.zh-CN.md)
     </a>
 </p>
 
-> Day.js is a minimalist JavaScript library that parse, validate, manipulate, and display dates and times for modern browsers with a largely Moment.js-compatible API. If you use Moment.js, you already know how to use Day.js.
+> Day.js is a minimalist JavaScript library that parses, validates, manipulates, and displays dates and times for modern browsers with a largely Moment.js-compatible API. If you use Moment.js, you already know how to use Day.js.
 
 ```js
 dayjs().startOf('month').add(1, 'day').set('year', 2018).format('YYYY-MM-DD HH:mm:ss');
@@ -32,6 +32,7 @@ dayjs().startOf('month').add(1, 'day').set('year', 2018).format('YYYY-MM-DD HH:m
 * 🕒 Familiar Moment.js API & patterns
 * 💪 Immutable
 * 🔥 Chainable
+* 🌐 I18n support
 * 📦 2kb mini library
 * 👫 All browsers supported
 
@@ -71,10 +72,37 @@ Just download the latest version of Day.js at [https://unpkg.com/dayjs/](https:/
 Instead of modifying the native `Date.prototype`, Day.js creates a wrapper for the Date object, called `Dayjs` object.
 `Dayjs` object is immutable, that is to say, all API operation will return a new `Dayjs` object.
 
+## I18n
+
+Day.js has great support for internationalization.
+
+But none of them will be included in your build unless you use that.
+
+```javascript
+dayjs.locale('es') // use Spanish locale globally
+
+dayjs('2018-05-05').locale('zh-cn').format() // use Chinese Simplified locale in a specific instance
+```
+[I18n Reference](./docs/en/I18n.md)
+
 ## API
+
+Day.js has many APIs that could parses, validates, manipulates, and displays dates and times.
 
 [API Reference](./docs/en/API-reference.md)
 ---
+
+## Plugin
+
+It's easy to extend Day.js to meet your need.
+
+Here's some plugins.
+
+| Name               | Info             | Description                           |
+| -------------------| ---------------- | ------------------------------------- |
+| `AdvancedFormat`   |                  | More format option                    |
+
+[Plugin Reference](./docs/en/Plugin.md)
 
 ## License
 
