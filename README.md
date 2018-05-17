@@ -38,44 +38,27 @@ dayjs().startOf('month').add(1, 'day').set('year', 2018).format('YYYY-MM-DD HH:m
 
 ---
 
-## Installation
+## Getting Started
 
-You have multiple ways of getting Day.js:
+### Installation
 
-* Via NPM:
+You have multiple ways of getting Day.js.
 
-```console
+```bash
 npm install dayjs --save
 ```
 
-```js
-var dayjs = require('dayjs');
-dayjs().format();
-```
-
-* Via CDN:
-
-```html
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://unpkg.com/dayjs"></script>
-<script>
-  dayjs().format();
-</script>
-```
-
-* Via download and self-hosting:
-
-Just download the latest version of Day.js at [https://unpkg.com/dayjs/](https://unpkg.com/dayjs/)
-
-## Getting Started
+[Installation Reference](./docs/en/Installation.md)
 
 ### I18n
 
 Day.js has great support for internationalization.
 
-But none of them will be included in your build unless you use that.
+But none of them will be included in your build unless you use it.
 
 ```javascript
+import 'dayjs/locale/es' // load on demand
+
 dayjs.locale('es') // use Spanish locale globally
 
 dayjs('2018-05-05').locale('zh-cn').format() // use Chinese Simplified locale in a specific instance
@@ -84,23 +67,35 @@ dayjs('2018-05-05').locale('zh-cn').format() // use Chinese Simplified locale in
 
 ### API
 
-Day.js has many APIs that could parses, validates, manipulates, and displays dates and times.
+It's easy to use Day.js APIs to parse, validate, manipulate, and display dates and times.
+
+```javascript
+dayjs('2018-08-08') // parse
+
+dayjs().format('{YYYY} MM-DDTHH:mm:ss SSS [Z] A') // display
+
+dayjs().set('month', 3).month() // get & set
+
+dayjs().add(1, 'year') // manipulate
+
+dayjs().isBefore(dayjs()) // query
+```
 
 [API Reference](./docs/en/API-reference.md)
----
 
 ### Plugin
 
-It's easy to extend Day.js to meet your need.
+A plugin is an independent module that can be added to Day.js to extend functionality or add new features.
 
-Here's some plugins.
+```javascript
+import AdvancedFormat from 'dayjs/plugin/AdvancedFormat' // load on demand
 
-| Name               | Info             | Description                           |
-| -------------------| ---------------- | ------------------------------------- |
-| `AdvancedFormat`   |                  | More format option                    |
+dayjs.extend(AdvancedFormat) // use plugin
 
+dayjs().format('Q Do k kk X x') // more available formats
+```
 [Plugin Reference](./docs/en/Plugin.md)
 
 ## License
 
-[MIT](./LICENSE)
+Day.js is licensed under a [MIT  License](./LICENSE).
