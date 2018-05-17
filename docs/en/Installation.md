@@ -1,4 +1,4 @@
-## Installation
+## Installation Guide
 
 You have multiple ways of getting Day.js:
 
