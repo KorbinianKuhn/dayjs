@@ -69,10 +69,7 @@ Just download the latest version of Day.js at [https://unpkg.com/dayjs/](https:/
 
 ## Getting Started
 
-Instead of modifying the native `Date.prototype`, Day.js creates a wrapper for the Date object, called `Dayjs` object.
-`Dayjs` object is immutable, that is to say, all API operation will return a new `Dayjs` object.
-
-## I18n
+### I18n
 
 Day.js has great support for internationalization.
 
@@ -85,14 +82,14 @@ dayjs('2018-05-05').locale('zh-cn').format() // use Chinese Simplified locale in
 ```
 [I18n Reference](./docs/en/I18n.md)
 
-## API
+### API
 
 Day.js has many APIs that could parses, validates, manipulates, and displays dates and times.
 
 [API Reference](./docs/en/API-reference.md)
 ---
 
-## Plugin
+### Plugin
 
 It's easy to extend Day.js to meet your need.
 
